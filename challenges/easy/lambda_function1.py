@@ -1,7 +1,7 @@
 """
 Simple Temperature Converter Lambda Function
 Convert Celsius to Fahrenheit
-    
+     
 Expected input: {"temperature": 25}
 Expected output: {"statusCode": 200, "body": 77}
 """
