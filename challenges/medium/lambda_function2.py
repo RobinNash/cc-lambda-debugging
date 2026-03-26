@@ -24,15 +24,21 @@ def lambda_handler(event, context=None):
 
     word = event['word']
     res = []
+    trans = {'A':'Alpha','E':'Echo','I':'India','O':'Oscar','U' :'Uniform', 'Y':'Yankee'}
 
     if word == None:
         return {
             'statusCode': 400,
             'body': json.dumps('Error: word field does not exist')
         }
+
+    
     
     for char in word:
-        res.append(char)
+        if char.upper() in trans:
+            res.append(trans[char])
+        else:
+            res.append(char)
 
     return {
         'statusCode': 200,
